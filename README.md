@@ -36,7 +36,7 @@
 2) Create An IAM Profile/Role For The Ansible Automation Engine (Dynamic Inventory)
 - Create an EC2 Service Role in IAM with AmazonEC2FullAccess Privilege 
 - Navigate to IAM
-![IAM!](https://github.com/awanmbandi/realworld-cicd-pipeline-project/blob/zdocs/images/Screen%20Shot%202023-10-03%20at%206.20.44%20PM.png)
+
     - Click on `Roles`
     - Click on `Create Role`
     - Select `Service Role`
@@ -88,7 +88,7 @@
     - Instance type: `t2.micro`
     - Key pair: `Select a keypair`
     - Security Group (Eit/Open): `8080, 9100, 9997` and `22 to 0.0.0.0/0`
-    - User data (Copy the following user data): https://github.com/awanmbandi/realworld-cicd-pipeline-project/blob/tomcat-splunk-installation/tomcat-ssh-configure.sh
+    - User data (Copy the following user data): https://github.com/lwersiy/realworld-cicd-pipeline-project/blob/tomcat-splunk-install/tomcat-ssh-configure.sh
     - Launch Instance
 
 7) EC2 (Stage Environment)
@@ -101,7 +101,7 @@
     - Instance type: `t2.micro`
     - Key pair: `Select a keypair`
     - Security Group (Eit/Open): `8080, 9100, 9997` and `22 to 0.0.0.0/0`
-    - User data (Copy the following user data): https://github.com/awanmbandi/realworld-cicd-pipeline-project/blob/tomcat-splunk-installation/tomcat-ssh-configure.sh
+    - User data (Copy the following user data): https://github.com/lwersiy/realworld-cicd-pipeline-project/blob/tomcat-splunk-install/tomcat-ssh-configure.sh
     - Launch Instance
 
 8) EC2 (Prod Environment)
@@ -114,7 +114,7 @@
     - Instance type: `t2.micro`
     - Key pair: `Select a keypair`
     - Security Group (Eit/Open): `8080, 9100, 9997` and `22 to 0.0.0.0/0`
-    - User data (Copy the following user data): https://github.com/awanmbandi/realworld-cicd-pipeline-project/blob/tomcat-splunk-installation/tomcat-ssh-configure.sh
+    - User data (Copy the following user data): https://github.com/lwersiy/realworld-cicd-pipeline-project/blob/tomcat-splunk-install/tomcat-ssh-configure.sh
     - Launch Instance
 
 9) Prometheus
@@ -146,7 +146,6 @@
     - Launch Instance
 
 #### NOTE: Confirm and make sure you have a total of 9 VM instances
-![PipelineEnvSetup!](https://github.com/awanmbandi/realworld-cicd-pipeline-project/blob/zdocs/images/Screenshot%202024-02-10%20at%202.17.03%E2%80%AFPM.png)
 
 12) Slack 
     - Go to the bellow Workspace and create a Private Slack Channel and name it "yourfirstname-jenkins-cicd-pipeline-alerts"
@@ -162,7 +161,6 @@
       - Click `Add Jenkins CI Integration`
       - Scrol Down and Click `SAVE SETTINGS/CONFIGURATIONS`
       - Leave this page open
-      ![SlackConfig!](https://github.com/awanmbandi/realworld-cicd-pipeline-project/raw/zdocs/images/Screen%20Shot%202023-04-26%20at%202.08.55%20PM.png)
     
     #### NOTE: Update Your Jenkins file with your Slack Channel Name
     - Go back to your local, open your `Jenkins-Realworld-CICD-Project` repo/folder/directory on VSCODE
@@ -178,7 +176,7 @@
 ## Configure All Systems
 ### Configure Promitheus With (Service Discovery)
   - Login/SSH to your Prometheus Server
-  - Clone repository: `git clone https://github.com/awanmbandi/realworld-cicd-pipeline-project.git`
+  - Clone repository: `git clone https://github.com/lwersiy/realworld-cicd-pipeline-project.git`
   - Change directory: `cd realworld-cicd-pipeline-project`
   - Swtitch branch: `git switch prometheus-and-grafana-install`
   - Confirm Branch Switch: `git branch` and `ls -al`
@@ -189,7 +187,7 @@
 
 ### Configure Grafana
   - Login/SSH to your Grafana Server
-  - Clone repository: `git clone https://github.com/awanmbandi/realworld-cicd-pipeline-project.git`
+  - Clone repository: `git clone https://github.com/lwersiy/realworld-cicd-pipeline-project.git`
   - Change directory: `cd realworld-cicd-pipeline-project`
   - Swtitch branch: `git switch prometheus-and-grafana-install`
   - Confirm Branch Switch: `git branch` and `ls -al`
@@ -201,7 +199,7 @@
   - Login/SSH into the "Dev-Env", "Stage-Env" and "Prod-Env" VM instance
   - Perform the following operations on all of them
   - Install git by running: `sudo yum install git -y `
-  - Clone repository: `git clone https://github.com/awanmbandi/realworld-cicd-pipeline-project.git`
+  - Clone repository: `git clone https://github.com/lwersiy/realworld-cicd-pipeline-project.git`
   - Change directory: `cd realworld-cicd-pipeline-project`
   - Swtitch branch: `git switch prometheus-and-grafana-install`
   - Confirm Branch Switch: `git branch` and `ls -al` *(to confirm you have the branch files)*
@@ -219,7 +217,7 @@
   - Install git: 
     - Jenkins/Maven/Ansible and Nexus VMs: `sudo yum install git -y`   
     - SonarQube VM: `sudo apt install git -y`
-  - Clone repository: `git clone https://github.com/awanmbandi/realworld-cicd-pipeline-project.git`
+  - Clone repository: `git clone `
   - Change directory: `cd realworld-cicd-pipeline-project`
   - Swtitch branch: `git switch prometheus-and-grafana-install`
   - Confirm Branch Switch: `git branch` and `ls -al` *(to confirm you have the branch files)*
